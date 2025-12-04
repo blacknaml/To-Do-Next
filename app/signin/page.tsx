@@ -52,11 +52,6 @@ export default async function SignInPage() {
             </Button>
           </form>
           <Separator />
-          <div className="space-y-4">
-            <Button className="w-full" variant="outline">
-              Sign in with Google
-            </Button>
-          </div>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
           <Link className="text-sm underline" href="/signup">
