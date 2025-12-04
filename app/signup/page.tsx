@@ -14,9 +14,17 @@ import {
 } from "@/components/ui/card";
 import { signup } from "@/actions/auth/actions";
 
-export default async function SignUpPage() {
+interface SignUpPageProps {
+  searchParams: {
+    message?: string;
+  };
+}
+
+export default async function SignUpPage(props: SignUpPageProps) {
   const supabase = createClient();
   const { data } = await (await supabase).auth.getUser();
+  const params = await props.searchParams;
+  const errorMessage = params.message;
 
   if (data?.user) {
     redirect("/");
@@ -49,6 +57,11 @@ export default async function SignUpPage() {
               <Label htmlFor="password">Password</Label>
               <Input id="password" name="password" required type="password" />
             </div>
+            {errorMessage && (
+              <p className="text-red-500 bg-red-100 p-2 rounded text-center text-md">
+                {errorMessage}
+              </p>
+            )}
             <Button formAction={signup} className="w-full">
               Sign Up
             </Button>

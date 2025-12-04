@@ -13,7 +13,6 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 interface SignInPageProps {
-  // searchParams masih di-type sebagai object, namun runtime memperlakukannya sebagai Promise
   searchParams: {
     message?: string;
   };
