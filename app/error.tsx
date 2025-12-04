@@ -18,7 +18,8 @@ export default function Error({
           <h2 className="mt-6 text-3xl font-extrablod text-gray-900 dark:text-gray-100">
             Oops! someting went wrong.
           </h2>
-          <p className="mt-2 text-xl text-red-600 dark:text-gray-400">
+          <hr />
+          <p className="mt-2 text-lg text-red-600 dark:text-gray-400">
             Error: {error.message}
           </p>
           <p className="mt-2 text-md text-red-600 dark:text-gray-400">

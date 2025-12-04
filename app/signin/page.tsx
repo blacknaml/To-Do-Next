@@ -12,9 +12,18 @@ import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default async function SignInPage() {
+interface SignInPageProps {
+  // searchParams masih di-type sebagai object, namun runtime memperlakukannya sebagai Promise
+  searchParams: {
+    message?: string;
+  };
+}
+
+export default async function SignInPage(props: SignInPageProps) {
   const supabase = createClient();
   const { data } = await (await supabase).auth.getUser();
+  const params = await props.searchParams;
+  const errorMessage = params.message;
 
   if (data?.user) {
     redirect("/");
@@ -47,6 +56,11 @@ export default async function SignInPage() {
               <label htmlFor="password">Password</label>
               <Input id="password" name="password" required type="password" />
             </div>
+            {errorMessage && (
+              <p className="text-red-500 bg-red-100 p-2 rounded text-center text-md">
+                {errorMessage}
+              </p>
+            )}
             <Button formAction={signin} className="w-full">
               Sign in
             </Button>
