@@ -22,7 +22,7 @@ export default async function SignInPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md shadow-xl">
         <CardHeader>
           <div className="flex flex-col items-center space-y-2">
             <h1 className="text-3xl font-bold">Welcome</h1>
