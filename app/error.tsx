@@ -12,16 +12,16 @@ export default function Error({
 }) {
   return (
     <main className="min-h-screen bg-gray-100 dark:bg-gray-800 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 text-center">
+      <div className="max-w-md w-full space-y-8 text-center shadow-red-400 shadow-lg px-5 py-5 bg-gray-200">
         <div>
           <AlertCircleIcon className="mx-auto h-12 w-auto text-red-500" />
           <h2 className="mt-6 text-3xl font-extrablod text-gray-900 dark:text-gray-100">
             Oops! someting went wrong.
           </h2>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-2 text-xl text-red-600 dark:text-gray-400">
             Error: {error.message}
           </p>
-          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-2 text-md text-red-600 dark:text-gray-400">
             Digest: {error.digest}
           </p>
         </div>
