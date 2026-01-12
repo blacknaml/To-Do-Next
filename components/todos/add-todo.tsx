@@ -9,25 +9,28 @@ export default function AddTodo() {
   const ref = useRef<HTMLFormElement>(null);
 
   return (
-    <form
-      className="flex outline-none items-center gap-2"
-      ref={ref}
-      action={async (formData) => {
-        await addTodo(formData);
-        ref.current?.reset();
-      }}
-    >
-      <Button className="min-w-5 h-5 p-0 rounded-sm">
-        <PlusIcon className="w-4 h-4" />
-      </Button>
-      <Input
-        id="task"
-        className="p-0 border-none focus-visible:ring-transparent"
-        name="task"
-        placeholder="Add new task"
-        required
-      />
-    </form>
+    <>
+      <hr className="mt-4 mb-2 border-gray-300" />
+      <form
+        className="flex outline-none items-center gap-2"
+        ref={ref}
+        action={async (formData) => {
+          await addTodo(formData);
+          ref.current?.reset();
+        }}
+      >
+        <Input
+          id="task"
+          className="p-2 border-none focus-visible:ring-transparent"
+          name="task"
+          placeholder="Add new task"
+          required
+        />
+        <Button className="min-w-6 h-6 p-0 rounded-md">
+          <PlusIcon className="w-4 h-4" />
+        </Button>
+      </form>
+    </>
   );
 }
 

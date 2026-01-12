@@ -1,4 +1,5 @@
 import { signin } from "@/actions/auth/actions";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -40,30 +41,32 @@ export default async function SignInPage(props: SignInPageProps) {
           </div>
         </CardHeader>
         <CardContent className="space-y-6">
-          <form className="space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="email">Email</label>
-              <Input
-                id="email"
-                name="email"
-                placeholder="m@example.com"
-                required
-                type="email"
-              />
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="password">Password</label>
-              <Input id="password" name="password" required type="password" />
-            </div>
-            {errorMessage && (
-              <p className="text-red-500 bg-red-100 p-2 rounded text-center text-md">
-                {errorMessage}
-              </p>
-            )}
-            <Button formAction={signin} className="w-full">
-              Sign in
-            </Button>
-          </form>
+          <ErrorBoundary>
+            <form className="space-y-6">
+              <div className="space-y-2">
+                <label htmlFor="email">Email</label>
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="m@example.com"
+                  required
+                  type="email"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="password">Password</label>
+                <Input id="password" name="password" required type="password" />
+              </div>
+              {errorMessage && (
+                <p className="text-red-500 bg-red-100 p-2 rounded text-center text-md">
+                  {errorMessage}
+                </p>
+              )}
+              <Button formAction={signin} className="w-full">
+                Sign in
+              </Button>
+            </form>
+          </ErrorBoundary>
           <Separator />
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
