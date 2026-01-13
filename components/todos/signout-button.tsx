@@ -10,6 +10,7 @@ export default function SignOutButton() {
       onClick={async () => {
         await signout();
       }}
+      className="text-red-700 hover:text-white hover:bg-red-900"
     >
       Sign out
     </Button>

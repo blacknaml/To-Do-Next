@@ -2,7 +2,7 @@
 
 import { useFormStatus } from "react-dom";
 
-export function SubmitButton() {
+export function SubmitButton({ text }: { text: string }) {
   const { pending } = useFormStatus();
 
   return (
@@ -11,7 +11,7 @@ export function SubmitButton() {
       type="submit"
       disabled={pending}
     >
-      {pending ? "Submitting..." : "Sign In"}
+      {pending ? "Submitting..." : text}
     </button>
   );
 }

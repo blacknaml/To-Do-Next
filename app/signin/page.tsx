@@ -1,5 +1,4 @@
 import { signin } from "@/actions/auth/actions";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -61,7 +60,7 @@ export default async function SignInPage(props: SignInPageProps) {
                 {errorMessage}
               </p>
             )}
-            <SubmitButton />
+            <SubmitButton text="Sign In" />
           </form>
           <Separator />
         </CardContent>

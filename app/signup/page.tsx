@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-// import { signup } from "@/actions/auth/actions";
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { SubmitButton } from "@/components/ui/submitbutton";
 import {
   CardHeader,
   CardContent,
@@ -42,7 +41,7 @@ export default async function SignUpPage(props: SignUpPageProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <form className="space-y-6">
+          <form className="space-y-6" action={signup}>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -62,9 +61,7 @@ export default async function SignUpPage(props: SignUpPageProps) {
                 {errorMessage}
               </p>
             )}
-            <Button formAction={signup} className="w-full">
-              Sign Up
-            </Button>
+            <SubmitButton text="Sign Up" />
           </form>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
