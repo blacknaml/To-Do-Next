@@ -1,18 +1,17 @@
 "use client";
 
 import { signout } from "@/actions/auth/actions";
-import { Button } from "../ui/button";
 
 export default function SignOutButton() {
   return (
-    <Button
-      variant="ghost"
+    <button
+      type="button"
       onClick={async () => {
         await signout();
       }}
-      className="text-red-700 hover:text-white hover:bg-red-900"
+      className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
     >
       Sign out
-    </Button>
+    </button>
   );
 }

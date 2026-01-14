@@ -5,20 +5,20 @@ import Link from "next/link";
 
 export default function Main({ children }: { children: ReactNode }) {
   return (
-    <main className="min-h-screen flex flex-col gap-4 items-center justify-center">
+    <div className="min-h-screen flex gap-4 items-center justify-center">
       <div className="flex flex-col max-w-2xl border rounded-lg shadow-lg p-4">
         <div className="flex flex-row items-center justify-between gap-4 pb-4">
           <div className="flex flex-row gap-2">
             <CheckCircleIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
             <h1 className="font-semibold text-2xl">
-              <Link href="/">Todoku</Link>
+              <Link href="/">ToDoKo</Link>
             </h1>
           </div>
           <SideDropDown />
         </div>
         {children}
       </div>
-    </main>
+    </div>
   );
 }
 
