@@ -16,7 +16,7 @@ export default async function Todos() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="flex-1 overflow-auto">
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-1">
           {todos &&
             todos
               .filter((todo) => {
@@ -33,8 +33,8 @@ export default async function Todos() {
               .map((todo) => {
                 return <Todo key={todo.id} todo={todo} />;
               })}
-          <AddTodo />
         </div>
+        <AddTodo />
       </div>
     </Suspense>
   );

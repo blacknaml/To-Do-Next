@@ -8,7 +8,7 @@ export default async function Todo({ todo }: { todo: Todo }) {
   return (
     <div className="flex items-center gap-2">
       <form
-        className="flex items-center gap-2"
+        className="flex w-full items-center gap-2"
         action={async () => {
           "use server";
           await editTodo(todo);

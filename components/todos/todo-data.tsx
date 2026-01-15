@@ -34,7 +34,7 @@ export default function TodoData({ todo }: { todo: Todo }) {
 
   return (
     <Input
-      className="p-0 border-none focus-visible:ring-transparent"
+      className="p-2 rounded-none border-gray-200 focus-visible:ring-transparent"
       value={description}
       onChange={handleInputChange}
     />

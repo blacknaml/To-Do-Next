@@ -10,9 +10,8 @@ export default function AddTodo() {
 
   return (
     <>
-      <hr className="mt-4 mb-2 border-gray-300" />
       <form
-        className="flex outline-none items-center gap-2"
+        className="flex outline-none items-center gap-2 mt-4 mb-2"
         ref={ref}
         action={async (formData) => {
           await addTodo(formData);
@@ -21,12 +20,12 @@ export default function AddTodo() {
       >
         <Input
           id="task"
-          className="p-2 border-none focus-visible:ring-transparent"
+          className="p-2 border-gray-300 h-8 rounded-none shadow-xs focus-visible:ring-transparent"
           name="task"
           placeholder="Add new task"
           required
         />
-        <Button className="min-w-6 h-6 p-0 rounded-md">
+        <Button className="min-w-8 h-8 p-0 rounded-md shadow-xs">
           <PlusIcon className="w-4 h-4" />
         </Button>
       </form>
