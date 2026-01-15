@@ -33,7 +33,7 @@ export default async function SignInPage(props: SignInPageProps) {
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader>
           <div className="flex flex-col items-center space-y-2">
-            <h1 className="text-3xl font-bold">Welcome</h1>
+            <h1 className="text-3xl font-bold">Welcome to ToDoKo</h1>
             <p className="text-gray-500 dark:text-gray-400">
               Enter your email below to login to your account
             </p>
