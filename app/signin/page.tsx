@@ -60,7 +60,7 @@ export default async function SignInPage(props: SignInPageProps) {
                 {errorMessage}
               </p>
             )}
-            <SubmitButton text="Sign In" />
+            <SubmitButton text="Sign In" addClass="w-full" />
           </form>
           <Separator />
         </CardContent>

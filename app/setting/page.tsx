@@ -3,9 +3,19 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
 import { save } from "@/actions/profile/actions";
+import { SubmitButton } from "@/components/ui/submitbutton";
 
-export default async function SettingPage() {
+interface SettingPageProps {
+  searchParams: {
+    message?: string;
+  };
+}
+
+export default async function SettingPage(props: SettingPageProps) {
   const supabase = createClient();
+  const params = await props.searchParams;
+  const message = params.message;
+
   const {
     data: { user },
   } = await (await supabase).auth.getUser();
@@ -83,6 +93,11 @@ export default async function SettingPage() {
                 <p className="mt-1 text-xs/8 text-gray-500">
                   Write a few sentences about yourself.
                 </p>
+                {message && (
+                  <p className="text-red-700 bg-red-50 p-2 rounded text-center text-sm">
+                    {message}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -94,12 +109,7 @@ export default async function SettingPage() {
           >
             <Link href="/">Cancel</Link>
           </button>
-          <button
-            type="submit"
-            className="rounded-md bg-primary px-3 py-2 text-sm text-white shadow-xs hover:bg-gray-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
-          >
-            Save
-          </button>
+          <SubmitButton text="Save" />
         </div>
       </form>
     </Main>

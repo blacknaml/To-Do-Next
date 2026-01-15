@@ -61,7 +61,7 @@ export default async function SignUpPage(props: SignUpPageProps) {
                 {errorMessage}
               </p>
             )}
-            <SubmitButton text="Sign Up" />
+            <SubmitButton text="Sign Up" addClass="w-full" />
           </form>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
