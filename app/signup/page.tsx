@@ -42,6 +42,28 @@ export default async function SignUpPage(props: SignUpPageProps) {
         </CardHeader>
         <CardContent>
           <form className="space-y-6" action={signup}>
+            <div className="flex flex-row space-x-2">
+              <div className="space-y-2">
+                <Label htmlFor="firstname">Firstname</Label>
+                <Input
+                  id="firstname"
+                  name="firstname"
+                  placeholder="Firstname"
+                  required
+                  type="test"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="lastname">Lastname</Label>
+                <Input
+                  id="lastname"
+                  name="lastname"
+                  placeholder="Lastname"
+                  required
+                  type="test"
+                />
+              </div>
+            </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
